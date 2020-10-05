@@ -1,6 +1,7 @@
 class GardensController < ApplicationController
   def index
     @gardens = Garden.all
+    @array_images = ['.jpg', '.svg', '.png', 'jpeg', '.tif', '.gif', '.psd', '.pdf']
   end
 
   def show

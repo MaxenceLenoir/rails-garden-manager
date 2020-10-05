@@ -1,6 +1,10 @@
 <%= link_to garden_path(garden) do %>
   <div class="card-garden">
+  <% if @array_images.include?(garden.banner_url[-4..-1]) || garden.banner_url[0..26] == 'https://images.unsplash.com' %>
     <%= image_tag garden.banner_url %>
+  <% else %>
+    <%= image_tag 'https://thumbs.dreamstime.com/b/floral-garden-web-banner-flowers-white-background-digital-illustration-wallpaper-internet-66831906.jpg' %>
+  <% end %>
     <div class="card-garden-infos">
       <div>
         <h2><%= garden.name %></h2>
